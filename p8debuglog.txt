@@ -1,1 +1,410 @@
+ pwd
+/home/runner/Test3Session2
+ gcc -g p8final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0xa24: file p8final.c, line 72.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p8final.c:72
+72  {
+(gdb) n
+75    n=input_n();
+(gdb) s
+input_n () at p8final.c:20
+20  {
+(gdb) n
+22    printf("Enter number of fractions that has to be added\n");
+(gdb) n
+Enter number of fractions that has to be added
+23    scanf("%d",&n);
+(gdb) n
+3
+24    return n;
+(gdb) p n
+$1 = 3
+(gdb) n
+26  }
+(gdb) n
+main () at p8final.c:76
+76    Fraction f[n];
+(gdb) n
+78    input_in_fractions(n,f);
+(gdb) s
+input_in_fractions (n=3, f=0x7fffd3cfddb0) at p8final.c:37
+37    for(int i=0;i<n;i++)
+ pwd
+/home/runner/Test3Session2
+ gcc -g p8final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0xa24: file p8final.c, line 72.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:72
+72  {
+(gdb) n
+75    n=input_n();
+(gdb) s
+input_n () at p8final.c:20
+20  {
+(gdb) n
+22    printf("Enter number of fractions that has to be added\n");
+(gdb) n
+Enter number of fractions that has to be added
+23    scanf("%d",&n);
+(gdb) n
+
+3
+24    return n;
+(gdb) p n
+$1 = 3
+(gdb) n
+26  }
+(gdb) n
+main () at p8final.c:76
+76    Fraction f[n];
+(gdb) n
+78    input_in_fractions(n,f);
+(gdb) s
+input_in_fractions (n=3, f=0x7ffd17392440) at p8final.c:37
+37    for(int i=0;i<n;i++)
+(gdb) n
+39       f[i]=input_fraction();
+(gdb) s
+input_fraction () at p8final.c:29
+29  {
+(gdb) n
+31    printf("Enter thr numerator and denominator\n");
+(gdb) n
+Enter thr numerator and denominator
+32    scanf("%d/%d",&x.num,&x.den);
+(gdb) n
+1/2
+33    return x;
+(gdb) p x
+$2 = {num = 1, den = 2}
+(gdb) n
+34  }
+(gdb) n
+input_in_fractions (n=3, f=0x7ffd17392440) at p8final.c:37
+37    for(int i=0;i<n;i++)
+(gdb) n
+39       f[i]=input_fraction();
+(gdb) s
+input_fraction () at p8final.c:29
+29  {
+(gdb) n
+31    printf("Enter thr numerator and denominator\n");
+(gdb) n
+Enter thr numerator and denominator
+32    scanf("%d/%d",&x.num,&x.den);
+(gdb) n
+1/4
+33    return x;
+(gdb) p x
+$3 = {num = 1, den = 4}
+(gdb) n
+34  }
+(gdb) n
+input_in_fractions (n=3, f=0x7ffd17392440) at p8final.c:37
+37    for(int i=0;i<n;i++)
+(gdb) n
+39       f[i]=input_fraction();
+(gdb) s
+input_fraction () at p8final.c:29
+29  {
+(gdb) n
+31    printf("Enter thr numerator and denominator\n");
+(gdb) n
+Enter thr numerator and denominator
+32    scanf("%d/%d",&x.num,&x.den);
+(gdb) n
+2/6
+33    return x;
+(gdb) p x
+$4 = {num = 2, den = 6}
+(gdb) n
+34  }
+(gdb) n
+input_in_fractions (n=3, f=0x7ffd17392440) at p8final.c:37
+37    for(int i=0;i<n;i++)
+(gdb) n
+41  }
+(gdb) n
+main () at p8final.c:79
+79    sum=add_n_fractions(n,f);
+(gdb) s
+add_n_fractions (n=3, f=0x7ffd17392440) at p8final.c:55
+55    Sum.den=1;
+(gdb) n
+56    Sum.num=0;
+(gdb) n
+57    for(int i=0;i<n;i++)
+(gdb) n
+59        Sum=add_fractions(f[i],Sum);
+(gdb) s
+add_fractions (f1=..., f2=...) at p8final.c:45
+45    f3.num=f1.num*f2.den+f2.num*f1.den;
+(gdb) n
+46    f3.den=f1.den*f2.den;
+(gdb) n
+47    int x=find_gcd(f3.num,f3.den);
+(gdb) s
+find_gcd (a=1, b=2) at p8final.c:9
+9      int d=1;
+(gdb) n
+10    while(b!=0)
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$5 = 1
+(gdb) p a
+$6 = 2
+(gdb) p b
+$7 = 1
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$8 = 0
+(gdb) p a
+$9 = 1
+(gdb) p b
+$10 = 0
+(gdb) n
+17    return a;
+(gdb) p a
+$11 = 1
+(gdb) n
+18  }
+(gdb) n
+add_fractions (f1=..., f2=...) at p8final.c:48
+48    f3.num=f3.num/x;
+(gdb) n
+49    f3.den=f3.den/x;
+(gdb) n
+50    return f3;
+(gdb) p f3
+$12 = {num = 1, den = 2}
+(gdb) n
+51  }
+(gdb) n
+add_n_fractions (n=3, f=0x7ffd17392440) at p8final.c:57
+57    for(int i=0;i<n;i++)
+(gdb) n
+59        Sum=add_fractions(f[i],Sum);
+(gdb) s
+add_fractions (f1=..., f2=...) at p8final.c:45
+45    f3.num=f1.num*f2.den+f2.num*f1.den;
+(gdb) n
+46    f3.den=f1.den*f2.den;
+(gdb) n
+47    int x=find_gcd(f3.num,f3.den);
+(gdb) s
+find_gcd (a=6, b=8) at p8final.c:9
+9      int d=1;
+(gdb) n
+10    while(b!=0)
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$13 = 6
+(gdb) p a
+$14 = 8
+(gdb) p b
+$15 = 6
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$16 = 2
+(gdb) p a
+$17 = 6
+(gdb) p b
+$18 = 2
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$19 = 0
+(gdb) p b
+$20 = 0
+(gdb) p a
+$21 = 2
+(gdb) n
+17    return a;
+(gdb) p a
+$22 = 2
+(gdb) n
+18  }
+(gdb) n
+add_fractions (f1=..., f2=...) at p8final.c:48
+48    f3.num=f3.num/x;
+(gdb) n
+49    f3.den=f3.den/x;
+(gdb) n
+50    return f3;
+(gdb) p f3
+$23 = {num = 3, den = 4}
+(gdb) n
+51  }
+(gdb) n
+add_n_fractions (n=3, f=0x7ffd17392440) at p8final.c:57
+57    for(int i=0;i<n;i++)
+(gdb) n
+59        Sum=add_fractions(f[i],Sum);
+(gdb) s
+add_fractions (f1=..., f2=...) at p8final.c:45
+45    f3.num=f1.num*f2.den+f2.num*f1.den;
+(gdb) n
+46    f3.den=f1.den*f2.den;
+(gdb) n
+47    int x=find_gcd(f3.num,f3.den);
+(gdb) s
+find_gcd (a=26, b=24) at p8final.c:9
+9      int d=1;
+(gdb) n
+10    while(b!=0)
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$24 = 2
+(gdb) p a
+$25 = 24
+(gdb) p b
+$26 = 2
+(gdb) n
+13        d=a%b;
+(gdb) n
+14         a=b;
+(gdb) n
+15        b=d;
+(gdb) n
+10    while(b!=0)
+(gdb) p d
+$27 = 0
+(gdb) p a
+$28 = 2
+(gdb) p b
+$29 = 0
+(gdb) n
+17    return a;
+(gdb) p a
+$30 = 2
+(gdb) n
+18  }
+(gdb) n
+add_fractions (f1=..., f2=...) at p8final.c:48
+48    f3.num=f3.num/x;
+(gdb) n
+49    f3.den=f3.den/x;
+(gdb) n
+50    return f3;
+(gdb) p f3
+$31 = {num = 13, den = 12}
+(gdb) n
+51  }
+(gdb) n
+add_n_fractions (n=3, f=0x7ffd17392440) at p8final.c:57
+57    for(int i=0;i<n;i++)
+(gdb) n
+61    return Sum;
+(gdb) p sum
+No symbol "sum" in current context.
+(gdb) p Sum
+$32 = {num = 13, den = 12}
+(gdb) n
+62  }
+(gdb) n
+main () at p8final.c:80
+80    output(n,f,sum);
+(gdb) s
+output (n=3, f=0x7ffd17392440, sum=...) at p8final.c:65
+65    for(int i=0;i<n-1;i++)
+(gdb) n
+67        printf("%d/%d+",f[i].num,f[i].den);
+(gdb) n
+65    for(int i=0;i<n-1;i++)
+(gdb) n
+67        printf("%d/%d+",f[i].num,f[i].den);
+(gdb) n
+65    for(int i=0;i<n-1;i++)
+(gdb) n
+69    printf("%d/%d = %d/%d \n",f[n-1].num,f[n-1].den,sum.num,sum.den);
+(gdb) n
+1/2+1/4+2/6 = 13/12 
+70  }
+(gdb) n
+main () at p8final.c:81
+81    return 0;
+(gdb) n
+82  }
+(gdb) n

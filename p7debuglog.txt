@@ -1,1 +1,101 @@
 
+Program received signal SIGHUP, Hangup.
+ pwd
+/home/runner/Test3Session2
+ gcc -g p7final.c
+
+Program received signal SIGHUP, Hangup.
+ pwd
+/home/runner/Test3Session2
+ gcc -g p7final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8ae: file p7final.c, line 44.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7final.c:44
+44    f1=input_fraction();
+(gdb) s
+input_fraction () at p7final.c:20
+20  {
+(gdb) n
+22    printf("Enter the numerator and denominator\n");
+(gdb) n
+Enter the numerator and denominator
+23    scanf("%d/%d",&n.num,&n.den);
+(gdb) n
+1/2
+24    return n;
+(gdb) p n
+$1 = {num = 1, den = 2}
+(gdb) n
+25  }
+(gdb) n
+main () at p7final.c:46
+46    f2=input_fraction();
+(gdb) s
+input_fraction () at p7final.c:20
+20  {
+(gdb) n
+22    printf("Enter the numerator and denominator\n");
+(gdb) n
+Enter the numerator and denominator
+23    scanf("%d/%d",&n.num,&n.den);
+(gdb) n
+1/4
+24    return n;
+(gdb) p n
+$2 = {num = 1, den = 4}
+(gdb) n
+25  }
+(gdb) n
+main () at p7final.c:48
+48    sum=add_fractions(f1,f2);
+(gdb) s
+add_fractions (f1=..., f2=...) at p7final.c:29
+29    f3.num=f1.num*f2.den+f2.num*f1.den;
+(gdb) n
+30    f3.den=f1.den*f2.den;
+(gdb) n
+31    int x=find_gcd(f3.num,f3.den);
+(gdb) n
+32    f3.num=f3.num/x;
+(gdb) n
+33    f3.den=f3.den/x;
+(gdb) n
+34    return f3;
+(gdb) p f3
+$3 = {num = 3, den = 4}
+(gdb) n
+35  }
+(gdb) n
+main () at p7final.c:49
+49    output(f1,f2,sum);
+(gdb) s
+output (f1=..., f2=..., sum=...) at p7final.c:38
+38    printf("%d/%d + %d/%d = %d/%d \n",f1.num,f1.den,f2.num,f2.den,sum.num,sum.den);
+(gdb) n
+1/2 + 1/4 = 3/4 
+39  }
+(gdb) n
+main () at p7final.c:50
+50    return 0;
+(gdb) n
+51  }(gdb) 

@@ -1,1 +1,162 @@
+ pwd
+/home/runner/Test3Session2
+ gcc -g p1final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8ef: file p1final.c, line 35.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:35
+35  {
+(gdb) n
+37    input(&a,&b,&c,&d);
+(gdb) s
+input (num1=0x7ffc8fc68090, den1=0x7ffc8fc68094, num2=0x7ffc8fc68098, 
+    den2=0x7ffc8fc6809c) at p1final.c:5
+5     printf("Enter the 1st Fraction in the form of a/b\n");
+(gdb) n
+Enter the 1st Fraction in the form of a/b
+6     scanf("%d/%d",num1,den1);
+(gdb) n
+1/2
+7     printf("Enter the 2nd Fraction in the form of a/b\n");
+(gdb) n
+Enter the 2nd Fraction in the form of a/b
+8     scanf("%d/%d",num2,den2);
+(gdb) n
+1/4
+9   }
+(gdb) n
+main () at p1final.c:38
+38    add(a,b,c,d,&e,&f);
+(gdb) s
+add (num1=1, den1=2, num2=1, den2=4, num3=0x7ffc8fc680a0, den3=0x7ffc8fc680a4)
+    at p1final.c:12
+12    *num3=num1*den2+num2*den1;
+(gdb) n
+13    *den3=den1*den2;
+(gdb) n
+14    int a=*den3,b=*num3,t=1;
+(gdb) p *num3
+$1 = 6
+(gdb) p *den3
+$2 = 8
+(gdb) n
+15    if(a<b)
+(gdb) n
+21    while(a%b!=0)
+(gdb) n
+ pwd
+/home/runner/Test3Session2
+ gcc -g p2final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x88d: file p2final.c, line 38.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:38
+38    a=input_fraction();
+(gdb) s
+input_fraction () at p2final.c:8
+8   {
+(gdb) n
+10    printf("Enter The Fraction In the Form Of a/b\n");
+(gdb) n
+Enter The Fraction In the Form Of a/b
+11    scanf("%d/%d",&x.num,&x.den);
+(gdb) n
+1/2
+12    return x;
+(gdb) p x
+$1 = {num = 1, den = 2}
+(gdb) n
+13  }
+(gdb) n
+main () at p2final.c:39
+39    b=input_fraction();
+(gdb) s
+input_fraction () at p2final.c:8
+8   {
+(gdb) n
+10    printf("Enter The Fraction In the Form Of a/b\n");
+(gdb) n
+Enter The Fraction In the Form Of a/b
+11    scanf("%d/%d",&x.num,&x.den);
+(gdb) n
+1/4
+12    return x;
+(gdb) p x
+$2 = {num = 1, den = 4}
+(gdb) n
+13  }
+(gdb) n
+main () at p2final.c:40
+40    c=input_fraction();
+(gdb) s
+input_fraction () at p2final.c:8
+8   {
+(gdb) n
+10    printf("Enter The Fraction In the Form Of a/b\n");
+(gdb) n
+Enter The Fraction In the Form Of a/b
+11    scanf("%d/%d",&x.num,&x.den);
+(gdb) n
+2/6
+12    return x;
+(gdb) p x
+$3 = {num = 2, den = 6}
+(gdb) n
+13  }
+(gdb) n
+main () at p2final.c:41
+41   large=Largest_fraction(a,b,c);
+(gdb) s
+Largest_fraction (f1=..., f2=..., f3=...) at p2final.c:17
+17    if(f1.num*f2.den>f2.num*f1.den&&f1.num*f3.den>f3.num*f1.den)
+(gdb) n
+19      Largest=f1;
+(gdb) n
+29    return Largest;
+main () at p2final.c:42
+42    output(a,b,c,large);
+(gdb) s
+output (f1=..., f2=..., f3=..., largest=...) at p2final.c:33
+33    printf("%d/%d is the largest of all the fractions\n",largest.num,largest.den);
+(gdb) n
+1/2 is the largest of all the fractions
+34  }
+(gdb) n

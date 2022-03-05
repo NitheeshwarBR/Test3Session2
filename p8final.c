@@ -29,7 +29,7 @@ Fraction input_fraction()
 {
   Fraction x;
   printf("Enter thr numerator and denominator\n");
-  scanf("%d %d",&x.num,&x.den);
+  scanf("%d/%d",&x.num,&x.den);
   return x;
 }
 void input_in_fractions(int n,Fraction f[n])

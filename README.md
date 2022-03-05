@@ -20,7 +20,7 @@
 
 
 <br> 3.	Write a program find the nCr given n and r. 
-	<br> int input_n_and_r(int \*n, int \*r)
+	<br> void input_n_and_r(int \*n, int \*r)
 	<br> int ncr(int n, int r);
 	<br> void output(int n, int r, int result);
 

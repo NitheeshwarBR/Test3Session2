@@ -19,8 +19,8 @@ int find_gcd(int a,int b)
 Fraction input_fraction()
 {
   Fraction n;
-  printf("Enter thr numerator and denominator\n");
-  scanf("%d %d",&n.num,&n.den);
+  printf("Enter the numerator and denominator\n");
+  scanf("%d/%d",&n.num,&n.den);
   return n;
 }
 Fraction add_fractions(Fraction f1,Fraction f2)
